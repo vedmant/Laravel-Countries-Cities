@@ -15,6 +15,8 @@ class CitiesSeeder extends Seeder
         if (!$cities) {
             throw new Exception("Cities config file doesn't exists or empty, did you run: php artisan vendor:publish?");
         }
-        DB::table('cities')->insert($cities);
+        
+        foreach($cities as $city)
+            DB::table('cities')->insert($city);
     }
 }
