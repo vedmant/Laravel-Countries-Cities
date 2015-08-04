@@ -15,6 +15,8 @@ class CountriesSeeder extends Seeder
         if (!$countries) {
             throw new Exception("Countries config file doesn't exists or empty, did you run: php artisan vendor:publish?");
         }
-        DB::table('countries')->insert($countries);
+        
+        foreach($countries as $country)
+            DB::table('countries')->insert($country);
     }
 }
