@@ -28,7 +28,6 @@ class CreateCountriesTable extends Migration
             $table->string('head_of_state', 60)->nullable();
             $table->integer('capital')->unsigned()->nullable();
             $table->string('code2', 2);
-            $table->foreign('capital')->references('id')->on('cities');
         });
     }
 
